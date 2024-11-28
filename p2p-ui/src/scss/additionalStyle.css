@@ -1,0 +1,278 @@
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+.cheadbg {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+/* Base styles for floating labels */
+.floating-label {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+/* Input, textarea, and select common styles */
+.floating-label input,
+.floating-label textarea,
+.floating-label select {
+  padding: 0.5rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+  appearance: none;
+}
+
+/* Custom arrow for select dropdown */
+.floating-label select {
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%2365a30d"%3E%3Cpath fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+}
+
+/* Label styles */
+.floating-label label {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  transition: 0.2s ease all;
+  color: #999;
+  pointer-events: none;
+  background: transparent;
+  padding: 0 0.2rem;
+}
+
+/* Label floating behavior when focused or selected */
+.floating-label input:focus + label,
+.floating-label textarea:focus + label,
+.floating-label select:focus + label,
+.floating-label input:not(:focus):not(:placeholder-shown) + label,
+.floating-label textarea:not(:focus):not(:placeholder-shown) + label,
+.floating-label select:not([value=""]) + label {
+  top: -0.5rem; /* Move the label above the input */
+  font-size: 0.75rem; /* Reduce the label font size */
+  color: #65a30d; /* Set label color when floating */
+  font-weight: 500;
+  background: white; /* White background for better readability */
+  /* z-index: 1; */
+}
+
+/* Keep label floating when input or select has a value */
+.floating-label input.filled + label,
+.floating-label textarea.filled + label,
+.floating-label select.filled + label {
+  top: -0.5rem; /* Position the label above */
+  font-size: 0.75rem; /* Smaller font size */
+  color: #2563eb; /* Change color */
+  font-weight: 500;
+  background: white;
+  /* z-index: 1; */
+}
+
+/* Reset label color when not focused but with value */
+.floating-label input:not(:focus):not(:placeholder-shown) + label,
+.floating-label textarea:not(:focus):not(:placeholder-shown) + label,
+.floating-label select:not(:focus):not([value=""]) + label {
+  color: #2563eb;
+}
+
+/* Keep label floating when input or select has a value */
+.floating-label .active {
+  top: -0.5rem; /* Position the label above */
+  font-size: 0.75rem; /* Smaller font size */
+  color: #2563eb; /* Change color */
+  font-weight: 500;
+  background: white;
+  /* z-index: 1; */
+}
+
+/* Keep label floating when input or select has a value */
+.floating-label .floating {
+  top: -0.5rem; /* Position the label above */
+  font-size: 0.75rem; /* Smaller font size */
+  color: #65a30d; /* Change color */
+  font-weight: 500;
+  background: white;
+  /* z-index: 1; */
+}
+
+/* Custom scrollbar styles */
+.table-container {
+  max-height: auto; /* Set maximum height */
+  overflow-y: hidden;  /* Hide vertical scrollbar by default */
+  overflow-x: hidden; /* Hide horizontal scrollbar if not needed */
+  position: relative; /* Required for hover effect */
+}
+
+/* Show scrollbar on hover */
+.table-container:hover {
+  overflow-y: auto; /* Enable vertical scrolling on hover */
+}
+
+/* Firefox */
+.table-container {
+  scrollbar-width: thin; /* Thin scrollbar for Firefox */
+  scrollbar-color: transparent transparent; /* Default colors for Firefox */
+}
+
+/* Show scrollbar on hover for Firefox */
+.table-container:hover {
+  scrollbar-color: #1A1A27 transparent; /* Scrollbar color and track color */
+}
+
+/* Webkit (Chrome, Safari) */
+.table-container::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+  border-radius: 20px; /* Rounded edges for the scrollbar */
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: transparent; /* Track color when not hovered */
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #1A1A27; /* Scrollbar color */
+  border-radius: 20px; /* Rounded corners */
+  border: 2px solid transparent; /* No border */
+}
+
+/* Show track on hover */
+.table-container:hover::-webkit-scrollbar-track {
+  background: transparent; /* Track color when hovered */
+}
+
+.table-container:hover::-webkit-scrollbar-thumb {
+  background: #1A1A27; /* Thumb color when hovered */
+}
+
+/* Darker thumb color on hover */
+.table-container:hover::-webkit-scrollbar-thumb:hover {
+  background: #1A1A27; /* Darker color on hover */
+}
+
+/* Optional: Add a transition for smooth hover effect */
+.table-container::-webkit-scrollbar-thumb {
+  transition: background-color 0.3s ease;
+}
+
+.hover-popout {
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-popout:hover {
+  border-radius: 1rem;
+  transform: translateY(-5px); /* Move up slightly */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Pop-out shadow */
+}
+
+.custom-border {
+  border-right: 1px solid #dee2e6;
+}
+
+.custom-border:last-child {
+  border-right: none; /* Remove the border for the last column */
+}
+
+/* For the active tab */
+.active-tab {
+  background-color: #E2E8F0 !important;
+  color: #000;
+  position: relative;
+}
+
+/* Arrow effect next to active tab */
+.arrow-effect {
+  position: absolute;
+  content: "";
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 15px solid #E2E8F0; /* Matching the background color */
+}
+
+/* Group Hover Underline Effect */
+.relative {
+  position: relative;
+}
+
+.group:hover .underline-span {
+  width: 100%; /* Expands underline to full width */
+}
+
+.underline-span {
+  width: 0; /* Initial state: no underline */
+  height: 1px; /* Thin underline */
+  background-color: var(--cui-primary); /* Primary underline color */
+  transition: width 0.3s ease-in-out; /* Smooth transition effect */
+  position: absolute; /* Position the underline inside the parent */
+  bottom: 0; /* Align the underline to the bottom */
+  left: 0; /* Align the underline to the left */
+}
+
+.dotted-line {
+  border-top: 2px dotted #cccccc; /* Light gray dotted line */
+  margin-bottom: 16px; /* Optional: Adjust spacing as needed */
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu {
+  max-height: 200px; /* Set maximum height for the dropdown */
+  overflow-y: hidden; /* Hide overflow initially */
+  transition: overflow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.dropdown-menu:hover {
+  overflow-y: auto; /* Show scrollbar when hovered */
+}
+
+/* Scrollbar Styles */
+.dropdown-menu::-webkit-scrollbar {
+  width: 5px; /* Width of the scrollbar */
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: #020008; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background-color: #020008; /* Darker color on hover */
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+}
+
+.dot {
+  height: 16px;
+  width: 16px;
+  margin-right: 4px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.oval-shape {
+  background-color: #10b7d1; /* Replace with your desired bg-info color */
+  color: #fff;
+  padding: 4px 12px; /* Adjust as needed for sizing */
+  border-radius: 50px; /* Ensures a full oval shape */
+  font-size: small; /* Matches the text-small class */
+  display: inline-block; /* Ensures it doesn't stretch */
+}
